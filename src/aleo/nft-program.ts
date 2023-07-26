@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 export const NFTProgramId = 'mike_nft_test_v5.aleo';
 
 export const NFTProgram = `program mike_nft_test_v5.aleo;
-=======
-export const NFTProgramId = 'your_nft_name_goes_here.aleo';
-
-export const NFTProgram = `program your_nft_name_goes_here.aleo;
->>>>>>> v4
 
 struct TokenId:
     data1 as u128;
@@ -69,11 +63,7 @@ function initialize_collection:
     input r0 as u128.public;
     input r1 as u128.public;
     input r2 as BaseURI.public;
-<<<<<<< HEAD
     assert.eq self.caller aleo1qet25pa63lcw56unsd752m5tktazqeakzfnr9hehpt9uva3zacgs4h9qea;
-=======
-    assert.eq self.caller aleo1youraddressgoeshere;
->>>>>>> v4
 
     finalize r0 r1 r2;
 
@@ -98,11 +88,7 @@ finalize initialize_collection:
 function add_nft:
     input r0 as TokenId.public;
     input r1 as scalar.public;
-<<<<<<< HEAD
     assert.eq self.caller aleo1qet25pa63lcw56unsd752m5tktazqeakzfnr9hehpt9uva3zacgs4h9qea;
-=======
-    assert.eq self.caller aleo1youraddressgoeshere;
->>>>>>> v4
     hash.bhp256 r0 into r2 as field;    commit.bhp256 r2 r1 into r3 as field;
     finalize r3;
 
@@ -123,13 +109,9 @@ finalize add_nft:
 function add_minter:
     input r0 as address.private;
     input r1 as u8.public;
-<<<<<<< HEAD
     assert.eq self.caller aleo1qet25pa63lcw56unsd752m5tktazqeakzfnr9hehpt9uva3zacgs4h9qea;
-=======
-    assert.eq self.caller aleo1youraddressgoeshere;
     cast r0 r1 into r2 as NFT_mint.record;
     output r2 as NFT_mint.record;
->>>>>>> v4
 
     finalize;
 
@@ -139,15 +121,9 @@ finalize add_minter:
     assert.eq r1 1u32;
 
 
-<<<<<<< HEAD
-function set_mint_status:
-    input r0 as u128.public;
-    assert.eq self.caller aleo1qet25pa63lcw56unsd752m5tktazqeakzfnr9hehpt9uva3zacgs4h9qea;
-=======
 function update_toggle_settings:
     input r0 as u32.public;
-    assert.eq self.caller aleo1youraddressgoeshere;
->>>>>>> v4
+    assert.eq self.caller aleo1qet25pa63lcw56unsd752m5tktazqeakzfnr9hehpt9uva3zacgs4h9qea;
 
     finalize r0;
 
@@ -162,13 +138,8 @@ finalize update_toggle_settings:
 
 
 function set_mint_block:
-<<<<<<< HEAD
-    input r0 as u128.public;
-    assert.eq self.caller aleo1qet25pa63lcw56unsd752m5tktazqeakzfnr9hehpt9uva3zacgs4h9qea;
-=======
     input r0 as u32.public;
-    assert.eq self.caller aleo1youraddressgoeshere;
->>>>>>> v4
+    assert.eq self.caller aleo1qet25pa63lcw56unsd752m5tktazqeakzfnr9hehpt9uva3zacgs4h9qea;
 
     finalize r0;
 
@@ -182,11 +153,7 @@ finalize set_mint_block:
 
 function update_symbol:
     input r0 as u128.public;
-<<<<<<< HEAD
     assert.eq self.caller aleo1qet25pa63lcw56unsd752m5tktazqeakzfnr9hehpt9uva3zacgs4h9qea;
-=======
-    assert.eq self.caller aleo1youraddressgoeshere;
->>>>>>> v4
 
     finalize r0;
 
@@ -200,11 +167,7 @@ finalize update_symbol:
 
 function update_base_uri:
     input r0 as BaseURI.public;
-<<<<<<< HEAD
     assert.eq self.caller aleo1qet25pa63lcw56unsd752m5tktazqeakzfnr9hehpt9uva3zacgs4h9qea;
-=======
-    assert.eq self.caller aleo1youraddressgoeshere;
->>>>>>> v4
 
     finalize r0;
 
@@ -219,15 +182,10 @@ finalize update_base_uri:
     set r0.data3 into general_settings[6u8];
 
 
-<<<<<<< HEAD
-function freeze:
-    assert.eq self.caller aleo1qet25pa63lcw56unsd752m5tktazqeakzfnr9hehpt9uva3zacgs4h9qea;
-=======
 function open_mint:
     input r0 as scalar.private;
     hash.bhp256 self.caller into r1 as field;    commit.bhp256 r1 r0 into r2 as field;    cast self.caller r2 into r3 as NFT_claim.record;
     output r3 as NFT_claim.record;
->>>>>>> v4
 
     finalize r2;
 
